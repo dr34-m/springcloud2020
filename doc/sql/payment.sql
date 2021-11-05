@@ -1,19 +1,3 @@
-/*
- Navicat Premium Data Transfer
-
- Source Server         : springcloud2020
- Source Server Type    : MySQL
- Source Server Version : 50648
- Source Host           : 101.132.181.16:3306
- Source Schema         : springcloud2020
-
- Target Server Type    : MySQL
- Target Server Version : 50648
- File Encoding         : 65001
-
- Date: 05/11/2021 16:42:24
-*/
-
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
