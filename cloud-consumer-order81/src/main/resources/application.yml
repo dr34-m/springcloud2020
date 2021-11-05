@@ -1,0 +1,10 @@
+server:
+  port: 81
+
+spring:
+  application:
+    name: cloud-comsumer-order
+
+  devtools:
+    livereload:
+      port: 35730
