@@ -34,7 +34,7 @@ public class PaymentController {
     }
 
     @GetMapping("/info/{id}")
-    public CommonResult<Payment> create(@PathVariable("id") Integer id) {
+    public CommonResult<Payment> getPaymentById(@PathVariable("id") Integer id) {
         Payment payment = paymentService.getPaymentById(id);
         log.info("****查询结果****" + payment);
         return new CommonResult(200, "success" + serverPort, payment);
