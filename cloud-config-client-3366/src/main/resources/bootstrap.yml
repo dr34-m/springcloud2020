@@ -1,5 +1,5 @@
 server:
-  port: 3355
+  port: 3366
 
 spring:
   application:
@@ -20,7 +20,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka
-
 
 management:
   endpoints:
