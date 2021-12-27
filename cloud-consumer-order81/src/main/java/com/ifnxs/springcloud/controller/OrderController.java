@@ -47,7 +47,7 @@ public class OrderController {
     @GetMapping("/payment/getForEntity/{id}")
     public CommonResult<Payment> getPayment2(@PathVariable("id") Integer id) {
         ResponseEntity<CommonResult> entity = restTemplate.getForEntity(PAYMENT_URL + "/payment/info/" + id, CommonResult.class);
-        if(entity.getStatusCode().is2xxSuccessful()) {
+        if (entity.getStatusCode().is2xxSuccessful()) {
             return entity.getBody();
         } else {
             return new CommonResult<>(500, "请求失败");
@@ -63,5 +63,12 @@ public class OrderController {
         ServiceInstance serviceInstance = loadBalancer.instances(instances);
         URI uri = serviceInstance.getUri();
         return restTemplate.getForObject(uri + "/payment/lb", String.class);
+    }
+
+    // ====================> zipkin+sleuth
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin() {
+        String result = restTemplate.getForObject("http://localhost:8001" + "/payment/zipkin/", String.class);
+        return result;
     }
 }
